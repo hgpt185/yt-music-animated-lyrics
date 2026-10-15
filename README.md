@@ -1,5 +1,7 @@
 # Animated Lyrics for YouTube Music
 
+**GitHub:** [hgpt185/yt-music-animated-lyrics](https://github.com/hgpt185/yt-music-animated-lyrics)
+
 A Chrome extension that turns YouTube Music's plain lyrics panel into Spotify-style animated synced lyrics:
 
 - **Line transitions** — the current line is highlighted, slightly enlarged, and animates in
