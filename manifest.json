@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Animated Lyrics for YouTube Music",
-  "version": "1.2.1",
-  "description": "Spotify-style animated synced lyrics on YouTube Music: word-by-word karaoke highlight and click any line to seek.",
+  "version": "2.1.7",
+  "description": "Animated word-synced lyrics for YouTube Music, with line-sync mode, smooth scrolling, and click-to-seek.",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -21,17 +21,46 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["storage"],
+  "permissions": [
+    "storage"
+  ],
   "content_scripts": [
     {
-      "matches": ["https://music.youtube.com/*"],
-      "js": ["shared.js", "content.js"],
-      "css": ["content.css"],
+      "matches": [
+        "https://music.youtube.com/*"
+      ],
+      "js": [
+        "player-metadata.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://music.youtube.com/*"
+      ],
+      "js": [
+        "vendor/yaml.min.js",
+        "vendor/braccato.min.js",
+        "shared.js",
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
       "run_at": "document_idle"
     }
   ],
   "host_permissions": [
     "https://music.youtube.com/*",
-    "https://lrclib.net/*"
-  ]
+    "https://lrclib.net/*",
+    "https://api.betterlyrics.org/*",
+    "https://unison.boidu.dev/*",
+    "https://lyrics-api.binimum.org/*",
+    "https://lrc.red/*"
+  ],
+  "minimum_chrome_version": "120",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; base-uri 'none';"
+  }
 }

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy — Animated Lyrics for YouTube Music</title>
+<style>
+:root{color-scheme:light dark;font-family:system-ui,sans-serif}body{max-width:68ch;margin:48px auto;padding:0 24px;line-height:1.65}h1{font-size:2rem;line-height:1.2}h2{font-size:1.35rem;margin-top:32px}a{color:inherit;text-underline-offset:3px}a:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+</style>
+<main>
+<h1>Privacy policy</h1>
+<p>Animated Lyrics for YouTube Music · Updated 21 October 2026</p>
+<p>This extension displays synchronized lyrics on music.youtube.com. It reads the current song's title, artist, album when available, video ID, duration and playback position to find and synchronize lyrics.</p>
+<h2>Requests to lyric services</h2>
+<p>To retrieve matching lyrics, the extension sends current song metadata to independent HTTPS services: api.betterlyrics.org, lyrics-api.binimum.org, lrc.red, unison.boidu.dev and lrclib.net. Depending on the service, requests include the title, artist, album, duration and/or YouTube video ID. When needed, it sends the video ID to music.youtube.com's lyrics endpoints.</p>
+<p>These services receive the usual information associated with an HTTPS request, such as your IP address and browser-provided request headers. Their operators control their own server logs and retention practices. Requests omit credentials; the extension does not send your Google account credentials or authentication cookies to lyric services. Playback position and lyric-line clicks are used locally to synchronize or seek playback; they are not included in lyric-provider requests.</p>
+<h2>Data kept on your device</h2>
+<p>chrome.storage.local holds enable/disable and sync-mode preferences, cached lyrics keyed by song metadata and video ID, and the most recent lookup report. The report contains song metadata, provider endpoints, response status and timing, selected source and cue counts. It contains no song audio or authentication tokens. The lookup record is kept locally for troubleshooting; it is not sent to the developer.</p>
+<p>Word-timed results are eligible for reuse for up to seven days, line results for fifteen minutes, and missing results for six hours. These are cache-validity periods, not promises that every stored entry is automatically erased at expiry: entries are removed when accessed after expiry or during cache eviction. The cache is capped at approximately 500 entries. Unison lyric results are not persistently cached. The latest lookup report is replaced by later lookups; preferences remain until you clear extension storage or uninstall.</p>
+<p>The extension has no developer-operated analytics or advertising service, does not sell this data, does not use it for ads or credit decisions, and does not inspect browsing on other websites. Its use of this information is limited to providing and improving its visible lyric functionality. Information received from Google APIs is used in accordance with the Chrome Web Store User Data Policy, including its Limited Use requirements.</p>
+<h2>Your choices</h2>
+<p>You can disable the extension from its popup, restrict or revoke its site access in Chrome's extension settings, or uninstall it. Uninstalling removes its local extension storage. Local lookup records are not automatically sent to the developer.</p>
+<h2>Contact and changes</h2>
+<p>For questions or deletion guidance, contact the maintainer through the <a href="https://github.com/hgpt185/yt-music-animated-lyrics/issues" target="_blank" rel="noopener">project issue tracker</a>. Do not post sensitive account details there. Updates to data handling will be reflected in this policy and the store listing.</p>
+<p>This extension is independently developed and is not affiliated with or endorsed by Google or YouTube.</p>
+</main>
+</html>

@@ -11,7 +11,7 @@
         box-sizing: border-box;
       }
       body {
-        width: 280px;
+        width: 330px;
         margin: 0;
         padding: 20px;
         background: #0f0f0f;
@@ -80,55 +80,50 @@
         font-size: 12px;
         color: rgba(255, 255, 255, 0.45);
       }
-      .donate {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        margin-top: 16px;
-        color: #fff;
-        font-size: 12px;
-        text-decoration: none;
-        transition: color 150ms ease;
-      }
-      .donate:hover {
-        color: #fff;
-        text-decoration: underline;
-      }
-      .donate:focus-visible {
-        outline: 2px solid #fff;
-        outline-offset: 2px;
-        border-radius: 2px;
-      }
-      .donate .emoji {
-        filter: grayscale(1) brightness(2.4);
-        line-height: 1;
-      }
+      button { width: 100%; min-height: 40px; font: inherit; font-size: 13px; font-weight: 600; color: #fff; background: #242424; border: 1px solid #555; border-radius: 20px; padding: 9px 16px; cursor: pointer; }
+      button:hover { background: #353535; }
+      button:active { background: #454545; }
+      button:focus-visible, a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+      .switch input:focus-visible + .track { outline: 2px solid #fff; outline-offset: 3px; }
+      .sync-settings { margin-top: 20px; }
+      #sync-mode-status { color: #ddd; font-size: 13px; font-weight: 600; margin-bottom: 10px; }
+      .hint { color: #aaa; }
+      @media (prefers-reduced-motion: reduce) { .track, .thumb { transition: none; } }
+      .donate { display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; color: #fff; font-size: 12px; text-decoration: none; }
+      .donate:hover { text-decoration: underline; }
+      .donate .emoji { filter: grayscale(1) brightness(2.4); line-height: 1; }
     </style>
   </head>
   <body>
     <h1>Animated Lyrics</h1>
-    <p>Spotify-style synced lyrics for YouTube Music.</p>
+    <p>Synced lyrics, word by word.</p>
     <div class="row">
       <span>Enable animated lyrics</span>
       <label class="switch">
-        <input type="checkbox" id="enabled" checked />
+        <input type="checkbox" id="enabled" aria-label="Enable animated lyrics" checked />
         <span class="track"></span>
         <span class="thumb"></span>
       </label>
+    </div>
+    <div class="sync-settings">
+      <p id="sync-mode-status" role="status">Word sync preferred</p>
+      <button id="sync-mode-toggle" type="button">Switch to line sync</button>
+      <p class="hint">Uses line sync when word timing is unavailable.</p>
     </div>
     <p class="hint">
       Play a song on music.youtube.com and open the Lyrics tab. Click any lyric
       line to jump to that moment.
     </p>
-    <a
-      class="donate"
-      href="https://buymeacoffee.com/hemeshgupta"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <span class="emoji" aria-hidden="true">☕</span>
-      Buy me a coffee
-    </a>
+    <p class="hint">Song metadata is sent to lyric providers to find lyrics.
+      <a href="privacy.html" target="_blank" rel="noopener" style="color: #ddd">Privacy policy</a>
+    </p>
+    <p>
+      <a class="donate" href="https://buymeacoffee.com/hemeshgupta" target="_blank" rel="noopener noreferrer">
+        <span class="emoji" aria-hidden="true">☕</span>
+        Buy me a coffee
+      </a>
+    </p>
+    <p id="version" class="hint"></p>
     <script src="popup.js"></script>
   </body>
 </html>
