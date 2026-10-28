@@ -73,13 +73,55 @@ ytmusic-player-page.ytmal-lyrics-open #tab-renderer.ytmal-active {
   scroll-behavior: smooth;
 }
 
-.ytmal-lines::-webkit-scrollbar {
-  width: 8px;
+/* Hide scrollbars on the lyrics scroller */
+.ytmal-lines {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
 
-.ytmal-lines::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.18);
-  border-radius: 8px;
+.ytmal-lines::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Hide scrollbars on parent containers in the lyrics area */
+ytmusic-player-page.ytmal-lyrics-open #side-panel,
+ytmusic-player-page.ytmal-lyrics-open #tab-renderer,
+ytmusic-player-page.ytmal-lyrics-open .ytmal-root,
+ytmusic-player-page.ytmal-lyrics-open .content.style-scope.ytmusic-player-page {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+ytmusic-player-page.ytmal-lyrics-open #side-panel::-webkit-scrollbar,
+ytmusic-player-page.ytmal-lyrics-open #tab-renderer::-webkit-scrollbar,
+ytmusic-player-page.ytmal-lyrics-open .ytmal-root::-webkit-scrollbar,
+ytmusic-player-page.ytmal-lyrics-open .content.style-scope.ytmusic-player-page::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Hide horizontal scrollbar on breadcrumbs */
+ytmusic-player-page.ytmal-lyrics-open ytmusic-breadcrumb-renderer,
+ytmusic-player-page.ytmal-lyrics-open .breadcrumb-container,
+ytmusic-player-page.ytmal-lyrics-open [class*="breadcrumb"],
+ytmusic-player-page.ytmal-lyrics-open .ytmusic-breadcrumb-renderer {
+  overflow-x: hidden !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+ytmusic-player-page.ytmal-lyrics-open ytmusic-breadcrumb-renderer::-webkit-scrollbar,
+ytmusic-player-page.ytmal-lyrics-open .breadcrumb-container::-webkit-scrollbar,
+ytmusic-player-page.ytmal-lyrics-open [class*="breadcrumb"]::-webkit-scrollbar,
+ytmusic-player-page.ytmal-lyrics-open .ytmusic-breadcrumb-renderer::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Hide toolbar on the right side */
+ytmusic-player-page.ytmal-lyrics-open ytmusic-toolbar-renderer,
+ytmusic-player-page.ytmal-lyrics-open .right-toolbar,
+ytmusic-player-page.ytmal-lyrics-open [class*="toolbar"],
+ytmusic-player-page.ytmal-lyrics-open .ytmusic-toolbar-renderer {
+  display: none !important;
 }
 
 .ytmal-line {

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Animated Lyrics for YouTube Music",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Spotify-style animated synced lyrics on YouTube Music: word-by-word karaoke highlight and click any line to seek.",
   "icons": {
     "16": "icons/icon16.png",

@@ -80,6 +80,29 @@
         font-size: 12px;
         color: rgba(255, 255, 255, 0.45);
       }
+      .donate {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 16px;
+        color: #fff;
+        font-size: 12px;
+        text-decoration: none;
+        transition: color 150ms ease;
+      }
+      .donate:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+      .donate:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+        border-radius: 2px;
+      }
+      .donate .emoji {
+        filter: grayscale(1) brightness(2.4);
+        line-height: 1;
+      }
     </style>
   </head>
   <body>
@@ -97,6 +120,15 @@
       Play a song on music.youtube.com and open the Lyrics tab. Click any lyric
       line to jump to that moment.
     </p>
+    <a
+      class="donate"
+      href="https://buymeacoffee.com/hemeshgupta"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="emoji" aria-hidden="true">☕</span>
+      Buy me a coffee
+    </a>
     <script src="popup.js"></script>
   </body>
 </html>
